@@ -1,8 +1,8 @@
 [
     {
         "id": 1,
-        "name1": "Search engine",
-        "name2": "optimization",
+        "name1": "Search events",
+        "name2": "anywhere",
         "background": "h-[310px] p-12 bg-zinc-100 rounded-[45px] shadow-card border border-black justify-between items-center flex text-black",
         "arrow": "./services/ag.svg",
         "link": "./",
@@ -10,17 +10,17 @@
     },
     {
         "id": 2,
-        "name1": "Pay-per-click",
-        "name2": "advertising",
-        "background": "h-[310px] p-12 bg-lime rounded-[45px] shadow-card border border-black justify-between items-center flex text-black",
+        "name1": "Pay-per-event",
+        "name2": "or subscription",
+        "background": "h-[310px] p-12 bg-primary rounded-[45px] shadow-card border border-black justify-between items-center flex text-white",
         "arrow": "./services/ag.svg",
         "link": "./",
         "image": "./services/02.svg"
     },
     {
         "id": 3,
-        "name1": "Social Media",
-        "name2": "Marketing",
+        "name1": "Offline events",
+        "name2": "and anonymous participants",
         "background": "h-[310px] p-12 bg-black rounded-[45px] shadow-card border border-black justify-between items-center flex text-white",
         "arrow": "./services/aw.svg",
         "link": "./",
@@ -28,8 +28,8 @@
     },
     {
         "id": 4,
-        "name1": "Email",
-        "name2": "Marketing",
+        "name1": "Different Questions",
+        "name2": "and Round Formats",
         "background": "h-[310px] p-12 bg-zinc-100 rounded-[45px] shadow-card border border-black justify-between items-center flex text-black",
         "arrow": "./services/ag.svg",
         "link": "./",
@@ -37,9 +37,9 @@
     },
     {
         "id": 5,
-        "name1": "Content",
-        "name2": "Creation",
-        "background": "h-[310px] p-12 bg-lime rounded-[45px] shadow-card border border-black justify-between items-center flex text-black",
+        "name1": "AI-event creator",
+        "name2": "coming soon...",
+        "background": "h-[310px] p-12 bg-primary rounded-[45px] shadow-card border border-black justify-between items-center flex text-white",
         "arrow": "./services/ag.svg",
         "link": "./",
         "image": "./services/05.svg"
@@ -47,7 +47,7 @@
     {
         "id": 6,
         "name1": "Analytics and",
-        "name2": "Tracking",
+        "name2": "Leaderboards",
         "background": "h-[310px] p-12 bg-black rounded-[45px] shadow-card border border-black justify-between items-center flex text-white",
         "arrow": "./services/aw.svg",
         "link": "./",

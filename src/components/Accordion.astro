@@ -46,59 +46,59 @@ const { index, title, description } = Astro.props;
 <script>
   function accordionSetup() {
     const accordionItems = document.querySelectorAll(
-      ".accordion__item"
+      '.accordion__item'
     ) as NodeListOf<HTMLElement>;
 
     accordionItems.forEach((accordionItem) => {
-      const accordionToggle = accordionItem.querySelector(".accordion__toggle");
-      const accordionIcon = accordionItem.querySelector(".accordion__icon");
+      const accordionToggle = accordionItem.querySelector('.accordion__toggle');
+      const accordionIcon = accordionItem.querySelector('.accordion__icon');
 
       if (accordionToggle && accordionIcon) {
-        accordionToggle.addEventListener("click", (e) => {
+        accordionToggle.addEventListener('click', (e) => {
           e.stopPropagation(); // prevent the event from bubbling up to the document
 
           // Close other accordion items
           accordionItems.forEach((otherAccordionItem) => {
             if (
               otherAccordionItem !== accordionItem &&
-              otherAccordionItem.classList.contains("active")
+              otherAccordionItem.classList.contains('active')
             ) {
               const otherAccordionToggle =
-                otherAccordionItem.querySelector(".accordion__toggle");
+                otherAccordionItem.querySelector('.accordion__toggle');
               const otherAccordionIcon =
-                otherAccordionItem.querySelector(".accordion__icon");
+                otherAccordionItem.querySelector('.accordion__icon');
 
               if (otherAccordionToggle && otherAccordionIcon) {
-                otherAccordionItem.classList.remove("active");
-                otherAccordionItem.classList.remove("bg-lime");
-                otherAccordionToggle.setAttribute("aria-expanded", "false");
-                otherAccordionItem.style.height = "160px";
-                otherAccordionIcon.classList.remove("rotate-180");
-                otherAccordionIcon.classList.remove("collapsed");
+                otherAccordionItem.classList.remove('active');
+                otherAccordionItem.classList.remove('bg-primary');
+                otherAccordionToggle.setAttribute('aria-expanded', 'false');
+                otherAccordionItem.style.height = '160px';
+                otherAccordionIcon.classList.remove('rotate-180');
+                otherAccordionIcon.classList.remove('collapsed');
               }
             }
           });
 
           // Close itself if it's open, otherwise open it
-          if (!accordionItem.classList.contains("active")) {
-            accordionItem.classList.add("active");
-            accordionToggle.setAttribute("aria-expanded", "true");
+          if (!accordionItem.classList.contains('active')) {
+            accordionItem.classList.add('active');
+            accordionToggle.setAttribute('aria-expanded', 'true');
 
             // Set height according to content
-            accordionItem.style.height = accordionItem.scrollHeight + "px";
-            accordionItem.classList.add("bg-lime");
-            accordionIcon.classList.add("rotate-180");
-            accordionIcon.classList.add("collapsed");
+            accordionItem.style.height = accordionItem.scrollHeight + 'px';
+            accordionItem.classList.add('bg-primary');
+            accordionIcon.classList.add('rotate-180');
+            accordionIcon.classList.add('collapsed');
           } else {
-            accordionItem.classList.remove("active");
-            accordionToggle.setAttribute("aria-expanded", "false");
+            accordionItem.classList.remove('active');
+            accordionToggle.setAttribute('aria-expanded', 'false');
 
             // Reset height. Accordion Items have Overflow hidden so when it's
             // height is 60, because the toggle's height is 60, the content is hidden
-            accordionItem.style.height = "160px";
-            accordionIcon.classList.remove("rotate-180");
-            accordionItem.classList.remove("bg-lime");
-            accordionIcon.classList.remove("collapsed");
+            accordionItem.style.height = '160px';
+            accordionIcon.classList.remove('rotate-180');
+            accordionItem.classList.remove('bg-primary');
+            accordionIcon.classList.remove('collapsed');
           }
 
           e.preventDefault();
@@ -108,25 +108,25 @@ const { index, title, description } = Astro.props;
     });
 
     // Close the accordion when clicking outside of it
-    document.addEventListener("click", (event) => {
+    document.addEventListener('click', (event) => {
       accordionItems.forEach((accordionItem) => {
         const accordionToggle =
-          accordionItem.querySelector(".accordion__toggle");
-        const accordionIcon = accordionItem.querySelector(".accordion__icon");
+          accordionItem.querySelector('.accordion__toggle');
+        const accordionIcon = accordionItem.querySelector('.accordion__icon');
 
         if (
           accordionToggle &&
           accordionIcon &&
           !accordionItem.contains(event.target as Node)
         ) {
-          accordionItem.classList.remove("active");
-          accordionItem.classList.remove("bg-lime");
-          accordionToggle.setAttribute("aria-expanded", "false");
+          accordionItem.classList.remove('active');
+          accordionItem.classList.remove('bg-primary');
+          accordionToggle.setAttribute('aria-expanded', 'false');
 
           // Reset height. Overflow gets hidden
-          accordionItem.style.height = "160px";
-          accordionIcon.classList.remove("rotate-180");
-          accordionIcon.classList.remove("collapsed");
+          accordionItem.style.height = '160px';
+          accordionIcon.classList.remove('rotate-180');
+          accordionIcon.classList.remove('collapsed');
         }
       });
     });
@@ -134,5 +134,5 @@ const { index, title, description } = Astro.props;
 
   // Run on page swap
   accordionSetup();
-  document.addEventListener("astro:after-swap", accordionSetup);
+  document.addEventListener('astro:after-swap', accordionSetup);
 </script>
